@@ -14,7 +14,7 @@ def is_prime(n):
   return True   
 
 # size = input("Enter size of image:")
-size=100
+size=400
 while 1:
     try:
         size = int(size)
@@ -29,29 +29,29 @@ y = x
 print(x, y)
 i = 1   # current integer that we are checking
 step = 1    # how many steps utill we "rotate" our writing direction (since we're writing in spiral)
-direction = 1   # in which direction we are currently moving (0 = up, 1 = right, 2 = down, 3 = left)
+direction = 0   # in which direction we are currently moving (0 = righ, 1 = up, 2 = left, 3 = down)
 while True:
     for repeat in range(0,2):
         steps_left = step;
         while steps_left > 0:
             if x < 0 or x >= size or y < 0 or y >= size:
                 break
+            print(x, y, i)
             if(is_prime(i)):
                 img.putpixel((x, y), (0,0,0))
             i = i + 1
             if direction == 0:
-                y = y - 1
+                x += 1
             elif direction == 1:
-                x = x + 1
+                y -= 1
             elif direction == 2:
-                y = y + 1
+                x -= 1
             elif direction == 3:
-                x = x - 1
-            if repeat == 1:
-                direction += 1
-                if direction == 4:
-                    direction = 0
+                y += 1            
             steps_left = steps_left - 1
+        direction += 1
+        if direction == 4:
+            direction = 0
     if x < 0 or x >= size or y < 0 or y >= size:
         break
     step = step + 1
