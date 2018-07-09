@@ -1,0 +1,2 @@
+msg = "init"
+print(msg)
