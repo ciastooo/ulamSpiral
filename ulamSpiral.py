@@ -13,8 +13,7 @@ def is_prime(n):
     f +=6
   return True   
 
-# size = input("Enter size of image:")
-size=400
+size = input("Enter size of image:")
 while 1:
     try:
         size = int(size)
@@ -26,17 +25,22 @@ while 1:
 img = Image.new('RGB', (size, size), (255,255,255))
 x = size//2
 y = x
-print(x, y)
 i = 1   # current integer that we are checking
 step = 1    # how many steps utill we "rotate" our writing direction (since we're writing in spiral)
-direction = 0   # in which direction we are currently moving (0 = righ, 1 = up, 2 = left, 3 = down)
-while True:
+direction = 0   # in which direction we are currently moving (0 = right, 1 = up, 2 = left, 3 = down)
+max_i_10p = size*size*0.1
+progress=0
+current_progress=0
+while True: # we're drawing pixels untill we're out of image bounds
+    if i > progress:
+        print("Current picture progress: ", current_progress, "%", sep='')
+        progress += max_i_10p
+        current_progress += 10
     for repeat in range(0,2):
-        steps_left = step;
+        steps_left = step
         while steps_left > 0:
             if x < 0 or x >= size or y < 0 or y >= size:
                 break
-            print(x, y, i)
             if(is_prime(i)):
                 img.putpixel((x, y), (0,0,0))
             i = i + 1
@@ -55,5 +59,5 @@ while True:
     if x < 0 or x >= size or y < 0 or y >= size:
         break
     step = step + 1
-    
-img.save('image.png')
+print("Done, spiral saved as \"spiral" + str(size) + ".png\"")
+img.save('spiral' + str(size) + '.png')
