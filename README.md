@@ -6,7 +6,7 @@ This is simple script for generating ulam spirals.
 * [And more about Ulam spirals](http://ulamspiral.com)
 
 # Images
-### [100x100px](https://github.com/ciastooo/ulamSpiral/blob/master/spiral500.png?raw=true)
+### [100x100px](https://github.com/ciastooo/ulamSpiral/blob/master/spiral100.png?raw=true)
 ![Example 100x100px spiral ulam](https://github.com/ciastooo/ulamSpiral/blob/master/spiral100.png?raw=true "Example 100x100px spiral ulam")
 ### [500x500px](https://github.com/ciastooo/ulamSpiral/blob/master/spiral500.png?raw=true)
 ![Example 500x500px spiral ulam](https://github.com/ciastooo/ulamSpiral/blob/master/spiral500.png?raw=true "Example 500x500px spiral ulam")
